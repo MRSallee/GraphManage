@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+main.phone-list {
+    flex: 250px 0 0;
+    height: 100vh;
+    overflow: scroll;
+}
+
+section.brand {
+    padding: 12px 0 6px 0;
+    margin: 24px 0;
+    
+    border-top: 1px solid #ccc;
+}
+
+div.brand-label {
+    opacity: 0.3;
+}
+
+div.brand-phones {
+    border-left: 1px solid #ccc;
+    
+    cursor: move;
+    cursor: pointer;
+}
+
+div.brand-phones article {
+    padding: 6px 12px;
+}
+
+article.expanded {
+    background-color: #eee;
+}
+
+
+main.phone-editor {
+    flex: auto 1 1;
+    
+    background-color: #eee;
+}
+
+h2 {
+    display: flex;
+    
+    padding: 12px 24px;
+    margin: 0;
+}
+
+h2 span {
+    padding: 12px 0;
+}
+
+h2 input {
+    padding: 12px 36px;
+    margin-left: auto;
+    
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    
+    color: #666;
+    
+    cursor: pointer;
+}
+
+div.values-main {
+    padding: 24px;
+    border-top: 1px solid #ccc;
+}
+
+div.values-variant {
+    padding: 24px;
+    border-top: 1px solid #ccc;
+}
+
+article.value-row {
+    display: flex;
+}
+
+article.value-row + article.value-row {
+    margin-top: 12px;
+}
+
+article.value-row div {
+    flex: 150px 0 0;
+}
+
+article.value-row input {
+    flex: auto 1 1;
+    
+    border: 1px solid #ccc;
+}
+
+article.value-row input[value=""] {
+    background-color: #ddd;
+}

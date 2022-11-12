@@ -1,0 +1,91 @@
+
+[
+    {
+        "name":   "AKG",
+        "phones": [
+            {"name":"K371","file":"AKG K371","reviewScore":"3","price":"$170","shopLink":"https://amzn.to/3DmlWOq"}
+        ]
+    },
+    {
+        "name":   "Audeze",
+        "phones": [
+            {"name":"MM-500","file":"Audeze MM-500","reviewScore":"0","price":"$1,700","shopLink":"https://amzn.to/3sFokLx"}
+        ]
+    },
+    {
+        "name":   "Beyerdynamic",
+        "phones": [
+            {"name":"DT 900 Pro X","file":"Beyerdynamic DT 900 Pro X","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=6QVeo4O5Czw","price":"$260","shopLink":"https://amzn.to/3FjjTxn"}
+        ]
+    },
+    {
+        "name":   "Creative",
+        "phones": [
+            {"name":"Aurvana Live","file":["Creative Aurvana Live","Creative Aurvana Live (Brainwavz small oval perforated)"],"suffix":["","(pads: Brainwavz small oval perforated)"],"reviewScore":"4","price":"$80","shopLink":"https://amzn.to/3DJ2EnN"}
+        ]
+    },
+    {
+        "name":   "Final Audio",
+        "phones": [
+            {"name":"UX3000","file":"Final Audio UX3000","reviewScore":"0","price":"$150","shopLink":"https://amzn.to/3Ft3zKo"}
+        ]
+    },
+    {
+        "name":   "Focal",
+        "phones": [
+            {"name":"Bathys","file":["Focal Bathys","Focal Bathys (DAC)","Focal Bathys (3.5mm)"],"suffix":["(AAC)","(USB DAC mode)","(3.5mm mode)"],"reviewScore":"0","price":"$800","shopLink":"https://www.headphones.com/products/focal-bathys?utm_source=super-reviews&utm_medium=youtube&utm_campaign=focal-bathys"},
+            {"name":"Clear Professional","file":"Focal Clear Professional","reviewScore":"0","price":"$1,500","shopLink":"https://amzn.to/3TN1NZ6"}
+        ]
+    },
+    {
+        "name":   "Hifiman",
+        "phones": [
+            {"name":"Sundara","file":"Hifiman Sundara","reviewScore":"4","price":"$300","shopLink":"https://amzn.to/3SOYDCw"}
+        ]
+    },
+    {
+        "name":   "Meze",
+        "phones": [
+            {"name":"99 Classics","file":["Meze 99 Classics (Meze small)","Meze 99 Classics (Brainwavz oval microsuede)"],"suffix":["(pads: Meze small)","(pads: Brainwavz oval microsuede)"],"reviewScore":"3","reviewLink":"https://www.youtube.com/watch?v=s0t6PpgkkM4","price":"$300","shopLink":"https://mezeaudio.com/collections/all/products/meze-99-classics-walnut-gold-wood-headphones"},
+            {"name":"109 Pro","file":["Meze 109 Pro","Meze 109 Pro (AKG foam)","Meze 109 Pro (AKG inverted)"],"suffix":["","(AKG K240 foam disc)","(AKG K240 foam disc - inverted)"],"reviewScore":"3","reviewLink":"https://www.youtube.com/watch?v=x1Ha7trfbec","price":"$800","shopLink":"https://mezeaudio.com/collections/all/products/109-pro"},
+            {"name":"Liric","file":"Meze Liric","reviewScore":"3","reviewLink":"https://www.youtube.com/watch?v=712wpAGsAtI","price":"$2,000","shopLink":"https://mezeaudio.com/collections/all/products/liric"}
+        ]
+    },
+    {
+        "name":   "Moondrop",
+        "phones": [
+            {"name":"Void","file":["Moondrop Void (beta)"],"suffix":["(beta)"],"reviewScore":"0","price":"$200"}
+        ]
+    },
+    {
+        "name":   "Philips",
+        "phones": [
+            {"name":"Fidelio X2HR","file":"Philips Fidelio X2HR","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=R5rbP9GfF0M","price":"$150","shopLink":"https://amzn.to/3gIA6ll"}
+        ]
+    },
+    {
+        "name":   "Sendy",
+        "phones": [
+            {"name":"Aiva","file":"Sendy Aiva","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=kGeJm9gNixk","price":"$600","shopLink":"https://shop.musicteck.com/products/sendyaudio-aiva-black-beauty-series-97-76mm-planar-magnetic-headphones"}
+        ]
+    },
+    {
+        "name":   "Sennheiser",
+        "phones": [
+            {"name":"HD 560S","file":"Sennheiser HD 560S","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=ZmZjI8lfZuQ","price":"$200","shopLink":"https://amzn.to/3fj4xyg"},
+            {"name":"HD 600","file":"Sennheiser HD 600","reviewScore":"5","price":"$400","shopLink":"https://amzn.to/3U4vllb"}
+        ]
+    },
+    {
+        "name":   "Shure",
+        "phones": [
+            {"name":"Aonic 50","file":"Shure Aonic 50","reviewScore":"0","price":"$300","shopLink":"https://amzn.to/3zscS9w"}
+        ]
+    },
+    {
+        "name":   "Sony",
+        "phones": [
+            {"name":"WH-1000XM5","file":["Sony WH-1000XM5","Sony WH-1000XM5 (collab EQ)"],"suffix":["","(EQ: collab)"],"reviewScore":"0","price":"$400","shopLink":"https://amzn.to/3gOoopn"}
+        ]
+    }
+]
