@@ -60,10 +60,11 @@ h2 input {
     padding: 12px 36px;
     margin-left: auto;
     
-    border: 1px solid #ccc;
+    background-color: #79a6d2;
+    border: none;
     border-radius: 100px;
     
-    color: #666;
+    color: #fff;
     
     cursor: pointer;
 }
