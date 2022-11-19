@@ -10,7 +10,7 @@
 	- (o/n)Reviewscore
 	- (o/n)Reviewlink
 	- (o/n)Price
-	- (o/n)Shoplink
+	- (o/n)Shoplink  
 Demo: [mxdi.xyz/squig](https://mxdi.xyz/squig)
 
 ## JavaScript
