@@ -1,6 +1,7 @@
-const fs=require('fs');
+/* See LICENSE file for copyright and license details */
 // Import variables
 const {Input}=require('./variables.js');
+const fs=require('fs')l
 
 // Convert JSON into modifiable string
 var oldjson=JSON.stringify(require('./phone_book.json'),null,4);
@@ -15,7 +16,6 @@ newjson=newjson.replace(Input.oPrice,Input.nPrice);
 newjson=newjson.replace(Input.oShoplink,Input.nShoplink);
 // Replace old values with new values (end)
 
-// Overwrite old JSON with new data
 fs.writeFile('phone_book.json',newjson,(err)=> {
 	if (err) throw err;
 });
