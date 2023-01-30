@@ -1,91 +1,434 @@
-
 [
     {
         "name":   "AKG",
         "phones": [
-            {"name":"K371","file":"AKG K371","reviewScore":"3","price":"$170","shopLink":"https://amzn.to/3DmlWOq"}
+            {
+	        	"name":"K371",
+	            "reviewScore":"3",
+	            "reviewLink":"",
+	            "price":"$170",
+		        "shopLink":"https://amzn.to/3DmlWOq",
+	        	"file":"AKG K371"
+		    }
         ]
     },
     {
         "name":   "Audeze",
         "phones": [
-            {"name":"MM-500","file":"Audeze MM-500","reviewScore":"0","price":"$1,700","shopLink":"https://amzn.to/3sFokLx"}
+            {
+            	"name":"LCD-2 Closed Back",
+	            "reviewScore":"0",
+	            "reviewLink":"",
+	            "price":"$900",
+		        "shopLink":"https://amzn.to/3tXhZLY",
+            	"file":"Audeze LCD-2 Closed"
+		    },
+            {
+            	"name":"MM-500",
+	            "reviewScore":"5",
+	            "reviewLink":"https://www.youtube.com/watch?v=7kwY7Na-DFo",
+	            "price":"$1,700",
+		        "shopLink":"https://amzn.to/3sFokLx",
+            	"file":"Audeze MM-500"
+		    }
+        ]
+    },
+    {
+        "name":   "Auribus Acoustics",
+        "phones": [
+            {
+            	"name":"Everest",
+	            "reviewScore":"0",
+	            "reviewLink":"",
+	            "price":"$685",
+		        "shopLink":"https://www.auribusacoustics.com/product-page/everest-pre-release",
+            	"file":"Auribus Acoustics Everest"
+		    }
         ]
     },
     {
         "name":   "Beyerdynamic",
         "phones": [
-            {"name":"DT 900 Pro X","file":"Beyerdynamic DT 900 Pro X","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=6QVeo4O5Czw","price":"$260","shopLink":"https://amzn.to/3FjjTxn"}
+            {
+            	"name":"DT 900 Pro X",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=6QVeo4O5Czw",
+	            "price":"$260",
+		        "shopLink":"https://amzn.to/3FjjTxn",
+            	"file":"Beyerdynamic DT 900 Pro X"
+		    }
         ]
     },
     {
         "name":   "Creative",
         "phones": [
-            {"name":"Aurvana Live","file":["Creative Aurvana Live","Creative Aurvana Live (Brainwavz small oval perforated)"],"suffix":["","(pads: Brainwavz small oval perforated)"],"reviewScore":"4","price":"$80","shopLink":"https://amzn.to/3DJ2EnN"}
+            {
+            	"name":"Aurvana Live",
+	            "reviewScore":"4",
+	            "reviewLink":"",
+	            "price":"$80",
+		        "shopLink":"https://amzn.to/3DJ2EnN",
+            	"file":[
+            		"Creative Aurvana Live",
+            		"Creative Aurvana Live (bwz perf)"
+            	],
+	            "suffix":[
+	            	"",
+	            	"(pads: Brainwavz small oval perforated)"
+	            ]
+		    }
+        ]
+    },
+    {
+        "name":   "Drop",
+        "phones": [
+            {
+            	"name":"Panda",
+	            "reviewScore":"3",
+	            "reviewLink":"",
+	            "price":"$400",
+		        "shopLink":"https://drop.com/buy/drop-wireless-headphones?utm_source=linkshare&referer=95465S",
+            	"file":"Drop Panda"
+		    }
         ]
     },
     {
         "name":   "Final Audio",
         "phones": [
-            {"name":"UX3000","file":"Final Audio UX3000","reviewScore":"0","price":"$150","shopLink":"https://amzn.to/3Ft3zKo"}
+            {
+            	"name":"UX3000",
+	            "reviewScore":"0",
+	            "reviewLink":"",
+	            "price":"$150",
+		        "shopLink":"https://amzn.to/3Ft3zKo",
+            	"file":"Final Audio UX3000"
+		    }
         ]
     },
     {
         "name":   "Focal",
         "phones": [
-            {"name":"Bathys","file":["Focal Bathys","Focal Bathys (DAC)","Focal Bathys (3.5mm)"],"suffix":["(AAC)","(USB DAC mode)","(3.5mm mode)"],"reviewScore":"0","price":"$800","shopLink":"https://www.headphones.com/products/focal-bathys?utm_source=super-reviews&utm_medium=youtube&utm_campaign=focal-bathys"},
-            {"name":"Clear Professional","file":"Focal Clear Professional","reviewScore":"0","price":"$1,500","shopLink":"https://amzn.to/3TN1NZ6"}
+            {
+            	"name":"Bathys",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=MiuJBBCHuAk",
+	            "price":"$800",
+		        "shopLink":"https://www.headphones.com/products/focal-bathys?utm_source=super-reviews&utm_medium=youtube&utm_campaign=focal-bathys",
+            	"file":[
+            		"Focal Bathys (bt)",
+	            	"Focal Bathys (usb)",
+		            "Focal Bathys (3.5mm)"
+		        ],
+	            "suffix":[
+	            	"(mode: Bluetooth)",
+	            	"(mode: USB DAC)",
+		            "(mode: 3.5mm)"
+		        ]
+		    },
+            {
+            	"name":"Clear Professional",
+	            "reviewScore":"0",
+	            "reviewLink":"",
+	            "price":"$1,500",
+		        "shopLink":"https://amzn.to/3TN1NZ6",
+            	"file":"Focal Clear Professional"
+		    },
+            {
+            	"name":"Utopia 2022",
+	            "reviewScore":"0",
+	            "reviewLink":"",
+	            "price":"$5,000",
+		        "shopLink":"https://headphones.com/products/focal-utopia-2022",
+            	"file":"Focal Utopia 2022"
+		    }
+        ]
+    },
+    {
+        "name":   "HarmonicDyne",
+        "phones": [
+            {
+            	"name":"Poseidon",
+	            "reviewScore":"2",
+	            "reviewLink":"https://www.youtube.com/watch?v=rCOUYn5NI_s",
+	            "price":"$440",
+		        "shopLink":"https://www.linsoul.com/products/harmonicdyne-poseidon",
+            	"file":"HarmonicDyne Poseidon"
+		    },
+            {
+            	"name":"Zeus",
+	            "reviewScore":"3",
+	            "reviewLink":"https://www.youtube.com/watch?v=bWH6QvpI3Eg",
+	            "price":"$350",
+		        "shopLink":"https://www.linsoul.com/products/harmonicdyne-zeus",
+            	"file":"HarmonicDyne Zeus"
+		    }
         ]
     },
     {
         "name":   "Hifiman",
         "phones": [
-            {"name":"Sundara","file":"Hifiman Sundara","reviewScore":"4","price":"$300","shopLink":"https://amzn.to/3SOYDCw"}
+            {
+            	"name":"Edition XS",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=QDpHKSk8t2E",
+	            "price":"$500",
+		        "shopLink":"https://amzn.to/3TReukI",
+            	"file":"Hifiman Edition XS"
+		    },
+            {
+            	"name":"Sundara",
+	            "reviewScore":"4",
+	            "reviewLink":"",
+	            "price":"$300",
+		        "shopLink":"https://amzn.to/3SOYDCw",
+            	"file":"Hifiman Sundara"
+		    }
+        ]
+    },
+    {
+        "name":   "Koss",
+        "phones": [
+            {
+            	"name":"ESP/95X",
+	            "reviewScore":"4",
+	            "reviewLink":"",
+	            "price":"$500",
+		        "shopLink":"https://drop.com/buy/massdrop-x-koss-esp-95x-electrostatic-system?utm_source=linkshare&referer=95465S",
+            	"file":[
+            		"Koss ESP-95X",
+            		"Koss ESP-95X (Vesper)"
+            	],
+	            "suffix":[
+	            	"",
+	            	"(pads: Vesper)"
+	            ]
+		    },
+            {
+            	"name":"KPH30i",
+	            "reviewScore":"5",
+	            "reviewLink":"",
+	            "price":"$30",
+		        "shopLink":"https://amzn.to/3VKOFUv",
+            	"file":"Koss KPH30i"
+		    },
+            {
+            	"name":"KPH40",
+	            "reviewScore":"4",
+	            "reviewLink":"",
+	            "price":"$40",
+		        "shopLink":"https://amzn.to/3GeDRZ5",
+            	"file":"Koss KPH40"
+		    },
+            {
+            	"name":"KSC75",
+	            "reviewScore":"5",
+	            "reviewLink":"https://www.youtube.com/watch?v=PBaAabzgoSk",
+	            "price":"$20",
+		        "shopLink":"https://amzn.to/3i9zmHb",
+            	"file":"Koss KSC75"
+		    },
+            {
+            	"name":"Porta Pro",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=PBaAabzgoSk",
+	            "price":"$50",
+		        "shopLink":"https://amzn.to/3iePHdF",
+            	"file":[
+            		"Koss Porta Pro",
+	            	"Koss Porta Pro (Yaxi)",
+		            "Koss Porta Pro (Dekoni)"
+		        ],
+	            "suffix":[
+	            	"(pads: stock)",
+	            	"(pads: Yaxi)",
+		            "(pads: Dekoni)"
+		        ]
+		    }
         ]
     },
     {
         "name":   "Meze",
         "phones": [
-            {"name":"99 Classics","file":["Meze 99 Classics (Meze small)","Meze 99 Classics (Brainwavz oval microsuede)"],"suffix":["(pads: Meze small)","(pads: Brainwavz oval microsuede)"],"reviewScore":"3","reviewLink":"https://www.youtube.com/watch?v=s0t6PpgkkM4","price":"$300","shopLink":"https://mezeaudio.com/collections/all/products/meze-99-classics-walnut-gold-wood-headphones"},
-            {"name":"109 Pro","file":["Meze 109 Pro","Meze 109 Pro (AKG foam)","Meze 109 Pro (AKG inverted)"],"suffix":["","(AKG K240 foam disc)","(AKG K240 foam disc - inverted)"],"reviewScore":"3","reviewLink":"https://www.youtube.com/watch?v=x1Ha7trfbec","price":"$800","shopLink":"https://mezeaudio.com/collections/all/products/109-pro"},
-            {"name":"Liric","file":"Meze Liric","reviewScore":"3","reviewLink":"https://www.youtube.com/watch?v=712wpAGsAtI","price":"$2,000","shopLink":"https://mezeaudio.com/collections/all/products/liric"}
+            {
+            	"name":"99 Classics",
+	            "reviewScore":"3",
+	            "reviewLink":"https://www.youtube.com/watch?v=s0t6PpgkkM4",
+	            "price":"$300",
+		        "shopLink":"https://mezeaudio.com/collections/all/products/meze-99-classics-walnut-gold-wood-headphones",
+            	"file":[
+            		"Meze 99 Classics (meze lg)",
+	            	"Meze 99 Classics (meze sm)",
+		            "Meze 99 Classics (bwz sue)"
+		        ],
+	            "suffix":[
+	            	"(pads: Meze large)",
+	            	"(pads: Meze small)",
+		            "(pads: Brainwavz oval microsuede)"
+		        ]
+		    },
+            {
+            	"name":"109 Pro",
+	            "reviewScore":"3",
+	            "reviewLink":"https://www.youtube.com/watch?v=x1Ha7trfbec",
+	            "price":"$800",
+		        "shopLink":"https://mezeaudio.com/collections/all/products/109-pro",
+            	"file":[
+            		"Meze 109 Pro",
+	            	"Meze 109 Pro (AKG foam)"
+	            ],
+	            "suffix":[
+	            	"",
+	            	"(AKG K240 foam disc)"
+	            ]
+		    },
+            {
+            	"name":"Liric",
+	            "reviewScore":"3",
+	            "reviewLink":"https://www.youtube.com/watch?v=712wpAGsAtI",
+	            "price":"$2,000",
+		        "shopLink":"https://mezeaudio.com/collections/all/products/liric",
+            	"file":"Meze Liric"
+		    }
         ]
     },
     {
         "name":   "Moondrop",
         "phones": [
-            {"name":"Void","file":["Moondrop Void (beta)"],"suffix":["(beta)"],"reviewScore":"0","price":"$200"}
+            {
+            	"name":"Venus",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=G_lMhh6XXNM",
+	            "price":"$600",
+		        "shopLink":"https://shenzhenaudio.com/products/moondrop-venus-flagship-full-size-planar-headphone",
+            	"file":"Moondrop Venus"
+		    },
+            {
+            	"name":"Void",
+	            "reviewScore":"3",
+	            "reviewLink":"https://www.youtube.com/watch?v=uMllR_jUx0E",
+	            "price":"$200",
+		        "shopLink":"https://amzn.to/3iSKBE0",
+            	"file":"Moondrop Void"
+		    }
         ]
     },
     {
         "name":   "Philips",
         "phones": [
-            {"name":"Fidelio X2HR","file":"Philips Fidelio X2HR","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=R5rbP9GfF0M","price":"$150","shopLink":"https://amzn.to/3gIA6ll"}
+            {
+            	"name":"Fidelio X2HR",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=R5rbP9GfF0M",
+	            "price":"$150",
+		        "shopLink":"https://amzn.to/3gIA6ll",
+            	"file":"Philips Fidelio X2HR"
+		    }
         ]
     },
     {
         "name":   "Sendy",
         "phones": [
-            {"name":"Aiva","file":"Sendy Aiva","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=kGeJm9gNixk","price":"$600","shopLink":"https://shop.musicteck.com/products/sendyaudio-aiva-black-beauty-series-97-76mm-planar-magnetic-headphones"}
+            {
+            	"name":"Aiva",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=kGeJm9gNixk",
+	            "price":"$600",
+		        "shopLink":"https://shop.musicteck.com/products/sendyaudio-aiva-black-beauty-series-97-76mm-planar-magnetic-headphones",
+            	"file":"Sendy Aiva"
+		    }
         ]
     },
     {
         "name":   "Sennheiser",
         "phones": [
-            {"name":"HD 560S","file":"Sennheiser HD 560S","reviewScore":"4","reviewLink":"https://www.youtube.com/watch?v=ZmZjI8lfZuQ","price":"$200","shopLink":"https://amzn.to/3fj4xyg"},
-            {"name":"HD 600","file":"Sennheiser HD 600","reviewScore":"5","price":"$400","shopLink":"https://amzn.to/3U4vllb"}
+            {
+            	"name":"HD 560S",
+	            "reviewScore":"4",
+	            "reviewLink":"https://www.youtube.com/watch?v=ZmZjI8lfZuQ",
+	            "price":"$200",
+		        "shopLink":"https://amzn.to/3fj4xyg",
+            	"file":"Sennheiser HD 560S"
+		    },
+            {
+            	"name":"HD 58X",
+	            "reviewScore":"4",
+	            "reviewLink":"",
+	            "price":"$200",
+		        "shopLink":"https://drop.com/buy/massdrop-x-sennheiser-hd-58x-jubilee-headphones?utm_source=linkshare&referer=95465S",
+            	"file":[
+            		"Sennheiser HD 58X",
+	            	"Sennheiser HD 58X (teabag)"
+	            ],
+	            "suffix":[
+	            	"",
+	            	"(teabag mod)"
+	            ]
+		    },
+            {
+            	"name":"HD 600",
+	            "reviewScore":"5",
+	            "reviewLink":"",
+	            "price":"$400",
+		        "shopLink":"https://amzn.to/3U4vllb",
+            	"file":[
+                    "Sennheiser HD 600",
+                    "Sennheiser HD 600 (ZMF)"
+                ],
+                "suffix":[
+                    "",
+                    "(pads: ZMF Sub suede perforated)"
+                ]
+		    },
+            {
+            	"name":"HD 6XX",
+	            "reviewScore":"4",
+	            "reviewLink":"",
+	            "price":"$280",
+		        "shopLink":"https://drop.com/buy/massdrop-sennheiser-hd6xx?utm_source=linkshare&referer=95465S",
+            	"file":"Sennheiser HD 6XX"
+		    },
+            {
+            	"name":"HD 660S",
+	            "reviewScore":"4",
+	            "reviewLink":"",
+	            "price":"$500",
+		        "shopLink":"https://amzn.to/3hJJA0N",
+            	"file":"Sennheiser HD 660S"
+		    }
         ]
     },
     {
         "name":   "Shure",
         "phones": [
-            {"name":"Aonic 50","file":"Shure Aonic 50","reviewScore":"0","price":"$300","shopLink":"https://amzn.to/3zscS9w"}
+            {
+            	"name":"Aonic 50",
+	            "reviewScore":"0",
+	            "reviewLink":"",
+	            "price":"$300",
+		        "shopLink":"https://amzn.to/3zscS9w",
+            	"file":"Shure Aonic 50"
+		    }
         ]
     },
     {
         "name":   "Sony",
         "phones": [
-            {"name":"WH-1000XM5","file":["Sony WH-1000XM5","Sony WH-1000XM5 (collab EQ)"],"suffix":["","(EQ: collab)"],"reviewScore":"0","price":"$400","shopLink":"https://amzn.to/3gOoopn"}
+            {
+            	"name":"WH-1000XM3",
+	            "reviewScore":"3",
+	            "reviewLink":"https://www.youtube.com/watch?v=eef5NCKhMMg",
+	            "price":"$350",
+		        "shopLink":"https://amzn.to/3i6n2XR",
+            	"file":"Sony WH-1000XM3"
+		    },
+            {
+            	"name":"WH-1000XM5",
+	            "reviewScore":"3",
+	            "reviewLink":"",
+	            "price":"$400",
+		        "shopLink":"https://amzn.to/3gOoopn",
+            	"file":"Sony WH-1000XM5"
+		    }
         ]
     }
 ]

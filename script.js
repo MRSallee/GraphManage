@@ -52,7 +52,12 @@ function expandPhone(phone) {
     
     // Clear current contents
     let phoneEditor = document.querySelector('main.phone-editor form');
-    phoneEditor.innerHTML = '';
+    
+    function clearEditor() {
+        let allInputs = phoneEditor.querySelectorAll('input');
+        phoneEditor.innerHTML = '';
+    }
+    clearEditor();
     
     let phoneHeading = document.createElement('h2'),
         phoneHeadingLabel = document.createElement('span'),
@@ -96,6 +101,10 @@ function expandPhone(phone) {
         rowContainer.append(inputElem);
         rowContainer.append(inputElemO);
         
+//        inputElem.addEventListener('keyup', function() {
+//            console.log(inputElem.value);
+//        });
+        
         container.append(rowContainer);
     }
     
@@ -123,7 +132,9 @@ function expandPhone(phone) {
 }
 
 // Load json and init
-let jsonUrl = 'https://squig.link/headphones/data/phone_book.json?' + new Date().getTime();
+//let jsonUrl = 'https://squig.link/headphones/data/phone_book.json?' + new Date().getTime();
+//let jsonUrl = 'https://squig.link/data_mrs/phone_book.json?' + new Date().getTime();
+let jsonUrl = 'phone_book.json?' + new Date().getTime();
 
 fetch(jsonUrl)
 .then(response => {
