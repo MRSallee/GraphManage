@@ -2,24 +2,40 @@
 // Load data and populate phone list
 function handleData(data) {
     console.log(data);
-    let phoneList = document.querySelector('main.phone-list');
+    let phoneList = document.querySelector('main.phone-list'),
+        phonesContainer = document.createElement('section'),
+        buttonsContainer = document.createElement('section'),
+        buttonNewBrand = document.createElement('button');
+    
+    phonesContainer.className = 'phones-container';
+    buttonsContainer.className = 'phones-buttons-container';
+    buttonNewBrand.className = 'button-new-brand';
+    buttonNewBrand.textContent = '+ Add new brand'
+    
+    phoneList.append(phonesContainer);
+    phoneList.append(buttonsContainer);
+    buttonsContainer.append(buttonNewBrand);
     
     Object.entries(data).forEach(function(item) {        
-        let brandContainer = document.createElement('section'),
+        let brandContainer = document.createElement('article'),
             brandLabel = document.createElement('div'),
             brandPhonesList = document.createElement('div'),
+            buttonNewPhone = document.createElement('button'),
             brandName = item[1].name,
             brandPhones = item[1].phones;
         
-        brandContainer.classList.add('brand');
-        brandLabel.classList.add('brand-label')
-        brandPhonesList.classList.add('brand-phones')
+        brandContainer.className = 'brand';
+        brandLabel.className = 'brand-label';
+        brandPhonesList.className = 'brand-phones';
+        buttonNewPhone.className = 'button-new-phone';
         
         brandLabel.textContent = brandName;
+        buttonNewPhone.textContent = '+';
         
         brandContainer.append(brandLabel);
         brandContainer.append(brandPhonesList);
-        phoneList.append(brandContainer);
+        phonesContainer.append(brandContainer);
+        brandContainer.append(buttonNewPhone);
         
         // Add phones from a brand
         brandPhones.forEach(function(phone) {
