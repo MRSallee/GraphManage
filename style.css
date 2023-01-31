@@ -156,3 +156,21 @@ article.value-row input {
 article.value-row input[value=""] {
     background-color: #ddd;
 }
+
+/*****
+Add new *****/
+section.add-new-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: rgba(255,255,255, 0.5);
+    backdrop-filter: blur(6px);
+}

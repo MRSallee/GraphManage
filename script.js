@@ -16,56 +16,95 @@ function handleData(data) {
     phoneList.append(buttonsContainer);
     buttonsContainer.append(buttonNewBrand);
     
-    Object.entries(data).forEach(function(item) {        
-        let brandContainer = document.createElement('article'),
-            brandLabel = document.createElement('div'),
-            brandPhonesList = document.createElement('div'),
-            buttonNewPhone = document.createElement('button'),
-            brandName = item[1].name,
-            brandPhones = item[1].phones;
-        
-        brandContainer.className = 'brand';
-        brandLabel.className = 'brand-label';
-        brandPhonesList.className = 'brand-phones';
-        buttonNewPhone.className = 'button-new-phone';
-        
-        brandLabel.textContent = brandName;
-        buttonNewPhone.textContent = '+';
-        
-        brandContainer.append(brandLabel);
-        brandContainer.append(brandPhonesList);
-        phonesContainer.append(brandContainer);
-        brandContainer.append(buttonNewPhone);
-        
-        // Add phones from a brand
-        brandPhones.forEach(function(phone) {
-            let phoneContainer = document.createElement('article'),
-                phoneLabel = document.createElement('div'),
-                phoneVariations = document.createElement('div'),
-                phoneName = phone.name,
-                phoneSuffixes = phone.suffx;
+    buttonNewBrand.addEventListener('click', function() {
+        addNew('brand');
+    });
+    
+    Object.entries(data).forEach(function(item) {
+        addBrand(item);
+    });
+}
+
+function addBrand(item) {
+    let phonesContainer = document.querySelector('section.phones-container'),
+        brandContainer = document.createElement('article'),
+        brandLabel = document.createElement('div'),
+        brandPhonesList = document.createElement('div'),
+        buttonNewPhone = document.createElement('button'),
+        brandFromJson = item[1].name ? true : false,
+        brandName = brandFromJson ? item[1].name : item,
+        brandPhones = brandFromJson ? item[1].phones : [];
+    
+    brandContainer.className = 'brand';
+    brandLabel.className = 'brand-label';
+    brandPhonesList.className = 'brand-phones';
+    buttonNewPhone.className = 'button-new-phone';
+
+    brandLabel.textContent = brandName;
+    buttonNewPhone.textContent = '+';
+
+    brandContainer.append(brandLabel);
+    brandContainer.append(brandPhonesList);
+    phonesContainer.append(brandContainer);
+    brandContainer.append(buttonNewPhone);
+    
+    buttonNewPhone.addEventListener('click', function() {
+        addNew('model', brandPhonesList);
+    });
+
+    // Add phones from a brand
+    brandPhones.forEach(function(phone) {
+        addModel(phone, brandPhonesList);
+    });
+}
+
+function addModel(phone, brandPhonesList) {
+    let phoneContainer = document.createElement('article'),
+        phoneLabel = document.createElement('div'),
+        phoneVariations = document.createElement('div'),
+        phoneFromJson = phone.name ? true : false,
+        phoneName = phoneFromJson ? phone.name : phone,
+        phoneSuffixes = phoneFromJson ? phone.suffx : 0;
+    
+    phoneLabel.textContent = phoneName;
+    phoneContainer.append(phoneLabel);
+    brandPhonesList.append(phoneContainer);
+
+    phoneContainer.addEventListener('click', function() {
+        expandPhone(phone);
+
+        let lastExpanded = document.querySelector('div.brand-phones article.expanded');
+
+        if (lastExpanded) lastExpanded.classList.remove('expanded');
+        phoneContainer.classList.add('expanded');
+    });
+}
+
+function addNew(type, brandPhonesList) {
+    let body = document.querySelector('body'),
+        addNewContainer = document.createElement('section'),
+        addNewInput = document.createElement('input');
+    
+    addNewContainer.className = 'add-new-container';
+    addNewInput.className = 'add-new-brand-name';
+    
+    addNewContainer.append(addNewInput);
+    body.append(addNewContainer);
+    addNewInput.focus();
+    
+    addNewInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            let inputValue = addNewInput.value;
+            addNewContainer.remove();
             
-            phoneLabel.textContent = phoneName;
-            phoneContainer.append(phoneLabel);
-            brandPhonesList.append(phoneContainer);
-            
-            phoneContainer.addEventListener('click', function() {
-                expandPhone(phone);
-                
-                let lastExpanded = document.querySelector('div.brand-phones article.expanded');
-                
-                if (lastExpanded) lastExpanded.classList.remove('expanded');
-                phoneContainer.classList.add('expanded');
-            });
-        });
-        
+            if (type === 'brand') addBrand(inputValue);
+            if (type === 'model') addModel(inputValue, brandPhonesList);
+        }
     });
 }
 
 // Populate phone editor
 function expandPhone(phone) {
-    console.log(phone);
-    
     // Clear current contents
     let phoneEditor = document.querySelector('main.phone-editor form');
     
@@ -116,10 +155,6 @@ function expandPhone(phone) {
         rowContainer.append(labelElem);
         rowContainer.append(inputElem);
         rowContainer.append(inputElemO);
-        
-//        inputElem.addEventListener('keyup', function() {
-//            console.log(inputElem.value);
-//        });
         
         container.append(rowContainer);
     }
