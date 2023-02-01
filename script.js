@@ -10,7 +10,7 @@ function handleData(data) {
     phonesContainer.className = 'phones-container';
     buttonsContainer.className = 'phones-buttons-container';
     buttonNewBrand.className = 'button-new-brand';
-    buttonNewBrand.textContent = '+ Add new brand'
+    buttonNewBrand.textContent = '+ Add brand'
     
     phoneList.append(phonesContainer);
     phoneList.append(buttonsContainer);
@@ -43,7 +43,7 @@ function addBrand(item) {
     buttonNewPhone.className = 'button-new-phone';
 
     brandLabel.textContent = brandName;
-    buttonNewPhone.textContent = '+';
+    buttonNewPhone.textContent = '+ Add phone';
 
     brandContainer.append(brandLabel);
     brandContainer.append(brandPhonesList);
