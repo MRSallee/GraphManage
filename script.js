@@ -140,7 +140,7 @@ function expandPhone(phone) {
     createValRow('Price', phone.price ? phone.price : '', valsMain);
     createValRow('Shop link', phone.shopLink ? phone.shopLink : '', valsMain);
 
-    function createValRow(label, value, container) {
+    function createValRow(label, value, container, readOnly) {
         let rowContainer = document.createElement('article'),
             labelElem = document.createElement('div'),
             inputElem = document.createElement('input'),
@@ -155,6 +155,8 @@ function expandPhone(phone) {
         inputElemO.setAttribute('name', 'o' +label.replace(' ', ''));
         inputElemO.setAttribute('value', value);
         inputElemO.setAttribute('type', 'hidden');
+        
+        if (readOnly) inputElem.setAttribute('readonly', '');
         
         rowContainer.append(labelElem);
         rowContainer.append(inputElem);
@@ -171,7 +173,7 @@ function expandPhone(phone) {
             valsVariant.className = 'values-variant';
             phoneEditor.append(valsVariant);
             
-            createValRow('Filename', file, valsVariant);
+            createValRow('Filename', file, valsVariant, true);
             createValRow('Label', phone.suffix[index], valsVariant);
         })
     } else {
@@ -179,7 +181,7 @@ function expandPhone(phone) {
         valsVariant.className = 'values-variant';
         phoneEditor.append(valsVariant);
         
-        createValRow('Filename', phone.file, valsVariant);
+        createValRow('Filename', phone.file, valsVariant, true);
         createValRow('Label', '', valsVariant);
     }
     

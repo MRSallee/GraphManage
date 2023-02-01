@@ -119,6 +119,11 @@ article.value-row input {
     border: 1px solid #ccc;
 }
 
+article.value-row input[readonly] {
+    background-color: #eee;
+    outline: none;
+}
+
 article.value-row input[value=""] {
     background-color: #ddd;
 }
