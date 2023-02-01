@@ -1,4 +1,3 @@
-
 Front end
 ----
 - NEXT: Add empty fields to JSON
@@ -12,9 +11,9 @@ Back end
 
 Classes
 ----
-- Math: Integrated math (alg, trig, etc.)
-- US govt
-- Computer sicence
+- Integrated Math 2
+- American Government
+- AP Computer Science A CTE
 - Psychology
-- English: CSU English, writing, reading, c-something
-- Japanese 2nd year
+- CSU Expository Reading/Writing (English)
+- Japanese 2

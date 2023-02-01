@@ -1,4 +1,4 @@
-
+// See LICENSE file for copyright and license details.
 // Load data and populate phone list
 function handleData(data) {
     console.log(data);
