@@ -1,0 +1,20 @@
+
+Front end
+----
+- NEXT: Add empty fields to JSON
+
+
+Back end
+----
+- NEXT: Adding to JSON
+- Generating JSON & adding empty fields
+
+
+Classes
+----
+- Math: Integrated math (alg, trig, etc.)
+- US govt
+- Computer sicence
+- Psychology
+- English: CSU English, writing, reading, c-something
+- Japanese 2nd year

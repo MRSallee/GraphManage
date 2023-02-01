@@ -23,6 +23,8 @@ function handleData(data) {
     Object.entries(data).forEach(function(item) {
         addBrand(item);
     });
+    
+    $(phonesContainer).sortable();
 }
 
 function addBrand(item) {
@@ -56,6 +58,8 @@ function addBrand(item) {
     brandPhones.forEach(function(phone) {
         addModel(phone, brandPhonesList);
     });
+    
+    $(brandPhonesList).sortable();
 }
 
 function addModel(phone, brandPhonesList) {
@@ -191,4 +195,5 @@ fetch(jsonUrl)
 .then(response => {
     return response.json();
 })
-.then(data => handleData(data));        
+.then(data => handleData(data));
+
