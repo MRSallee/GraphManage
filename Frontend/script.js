@@ -82,29 +82,51 @@ function addModel(phone, brandPhonesList) {
         if (lastExpanded) lastExpanded.classList.remove('expanded');
         phoneContainer.classList.add('expanded');
     });
+    
+    if (phone === 'New') phoneContainer.click();
 }
 
 function addNew(type, brandPhonesList) {
-    let body = document.querySelector('body'),
-        addNewContainer = document.createElement('section'),
-        addNewInput = document.createElement('input');
+    // Post method function
+    if (type === 'model') addModel('New', brandPhonesList);
+    if (type === 'brand') {
+        let body = document.querySelector('body'),
+            addNewContainer = document.createElement('section'),
+            addNewForm = document.createElement('form'),
+            addNewInput = document.createElement('input');
+
+        addNewContainer.className = 'add-new-container';
+        addNewForm.setAttribute('action', 'write.php');
+        addNewForm.setAttribute('method', 'post');
+        addNewInput.className = 'add-new-brand-name';
+
+        addNewContainer.append(addNewForm);
+        addNewForm.append(addNewInput);
+        body.append(addNewContainer);
+        addNewInput.focus();
+    }
     
-    addNewContainer.className = 'add-new-container';
-    addNewInput.className = 'add-new-brand-name';
-    
-    addNewContainer.append(addNewInput);
-    body.append(addNewContainer);
-    addNewInput.focus();
-    
-    addNewInput.addEventListener('keyup', function(event) {
-        if (event.key === 'Enter') {
-            let inputValue = addNewInput.value;
-            addNewContainer.remove();
-            
-            if (type === 'brand') addBrand(inputValue);
-            if (type === 'model') addModel(inputValue, brandPhonesList);
-        }
-    });
+    // Original function
+//    let body = document.querySelector('body'),
+//        addNewContainer = document.createElement('section'),
+//        addNewInput = document.createElement('input');
+//    
+//    addNewContainer.className = 'add-new-container';
+//    addNewInput.className = 'add-new-brand-name';
+//    
+//    addNewContainer.append(addNewInput);
+//    body.append(addNewContainer);
+//    addNewInput.focus();
+//    
+//    addNewInput.addEventListener('keyup', function(event) {
+//        if (event.key === 'Enter') {
+//            let inputValue = addNewInput.value;
+//            addNewContainer.remove();
+//            
+//            if (type === 'brand') addBrand(inputValue);
+//            if (type === 'model') addModel(inputValue, brandPhonesList);
+//        }
+//    });
 }
 
 // Populate phone editor
@@ -164,8 +186,6 @@ function expandPhone(phone) {
         
         container.append(rowContainer);
     }
-    
-    
     
     if (Array.isArray(phone.file)) {
         phone.file.forEach(function(file, index) {
