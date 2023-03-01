@@ -88,45 +88,30 @@ function addModel(phone, brandPhonesList) {
 
 function addNew(type, brandPhonesList) {
     // Post method function
-    if (type === 'model') addModel('New', brandPhonesList);
-    if (type === 'brand') {
+    //if (type === 'model') addModel('New', brandPhonesList);
         let body = document.querySelector('body'),
             addNewContainer = document.createElement('section'),
             addNewForm = document.createElement('form'),
-            addNewInput = document.createElement('input');
+            addNewInput = document.createElement('input'),
+            hiddenInput = document.createElement('input'),
+            value = type === 'brand' ? 'add-brand' : 'add-phone',
+            name = type === 'brand' ? 'nBrand' : 'nPhone';
 
         addNewContainer.className = 'add-new-container';
-        addNewForm.setAttribute('action', 'write.php');
+        addNewForm.setAttribute('action', 'modify.php');
         addNewForm.setAttribute('method', 'post');
-        addNewInput.className = 'add-new-brand-name';
+        addNewInput.className = 'add-new-label';
+        
+        addNewInput.name = name;
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.name = 'function';
+        hiddenInput.value = value;
 
         addNewContainer.append(addNewForm);
         addNewForm.append(addNewInput);
+        addNewForm.append(hiddenInput);
         body.append(addNewContainer);
         addNewInput.focus();
-    }
-    
-    // Original function
-//    let body = document.querySelector('body'),
-//        addNewContainer = document.createElement('section'),
-//        addNewInput = document.createElement('input');
-//    
-//    addNewContainer.className = 'add-new-container';
-//    addNewInput.className = 'add-new-brand-name';
-//    
-//    addNewContainer.append(addNewInput);
-//    body.append(addNewContainer);
-//    addNewInput.focus();
-//    
-//    addNewInput.addEventListener('keyup', function(event) {
-//        if (event.key === 'Enter') {
-//            let inputValue = addNewInput.value;
-//            addNewContainer.remove();
-//            
-//            if (type === 'brand') addBrand(inputValue);
-//            if (type === 'model') addModel(inputValue, brandPhonesList);
-//        }
-//    });
 }
 
 // Populate phone editor
