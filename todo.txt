@@ -1,15 +1,11 @@
 Front end
 ----
-- When adding/deleting a phone or brand, have it run PHP script
-- Form w/ submit that executes php page
-
-
+- Add deleting functionality for phones/brands 
+- Modify filenames/suffixes separately from editor; accomodate for array
 
 Back end
 ----
-- NEXT: Adding to JSON
-- Generating JSON & adding empty fields
-
+- Allow users to upload measurment files
 
 Classes
 ----

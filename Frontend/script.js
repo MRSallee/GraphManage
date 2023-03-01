@@ -202,11 +202,10 @@ function expandPhone(phone) {
 // Load json and init
 //let jsonUrl = 'https://squig.link/headphones/data/phone_book.json?' + new Date().getTime();
 //let jsonUrl = 'https://squig.link/data_mrs/phone_book.json?' + new Date().getTime();
-let jsonUrl = '../phone_book.json?' + new Date().getTime();
+let jsonUrl = 'phone_book.json?' + new Date().getTime();
 
 fetch(jsonUrl)
 .then(response => {
     return response.json();
 })
 .then(data => handleData(data));
-
