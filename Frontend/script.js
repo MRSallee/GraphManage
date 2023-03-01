@@ -1,7 +1,7 @@
 // See LICENSE file for copyright and license details.
 // Load data and populate phone list
 function handleData(data) {
-    console.log(data);
+    //console.log(data);
     let phoneList = document.querySelector('main.phone-list'),
         phonesContainer = document.createElement('section'),
         buttonsContainer = document.createElement('section'),
@@ -51,7 +51,7 @@ function addBrand(item) {
     brandContainer.append(buttonNewPhone);
     
     buttonNewPhone.addEventListener('click', function() {
-        addNew('model', brandPhonesList);
+        addNew('model', brandName);
     });
 
     // Add phones from a brand
@@ -86,32 +86,38 @@ function addModel(phone, brandPhonesList) {
     if (phone === 'New') phoneContainer.click();
 }
 
-function addNew(type, brandPhonesList) {
+function addNew(type, brandName) {
     // Post method function
-    //if (type === 'model') addModel('New', brandPhonesList);
-        let body = document.querySelector('body'),
-            addNewContainer = document.createElement('section'),
-            addNewForm = document.createElement('form'),
-            addNewInput = document.createElement('input'),
-            hiddenInput = document.createElement('input'),
-            value = type === 'brand' ? 'add-brand' : 'add-phone',
-            name = type === 'brand' ? 'nBrand' : 'nPhone';
+    let body = document.querySelector('body'),
+        addNewContainer = document.createElement('section'),
+        addNewForm = document.createElement('form'),
+        addNewInput = document.createElement('input'),
+        hiddenInputFunction = document.createElement('input'),
+        hiddenInputVar = document.createElement('input'),
+        functionValue = type === 'brand' ? 'add-brand' : 'add-phone',
+        hiddenInputVarName = type === 'brand' ? 'name' : 'brand',
+        name = type === 'brand' ? 'nBrand' : 'nPhone';
 
-        addNewContainer.className = 'add-new-container';
-        addNewForm.setAttribute('action', 'modify.php');
-        addNewForm.setAttribute('method', 'post');
-        addNewInput.className = 'add-new-label';
-        
-        addNewInput.name = name;
-        hiddenInput.setAttribute('type', 'hidden');
-        hiddenInput.name = 'function';
-        hiddenInput.value = value;
+    addNewContainer.className = 'add-new-container';
+    addNewForm.setAttribute('action', 'modify.php');
+    addNewForm.setAttribute('method', 'post');
+    addNewInput.className = 'add-new-label';
+    addNewInput.name = name;
 
-        addNewContainer.append(addNewForm);
-        addNewForm.append(addNewInput);
-        addNewForm.append(hiddenInput);
-        body.append(addNewContainer);
-        addNewInput.focus();
+    hiddenInputFunction.setAttribute('type', 'hidden');
+    hiddenInputFunction.name = 'function';
+    hiddenInputFunction.value = functionValue;
+
+    hiddenInputVar.setAttribute('type', 'hidden');
+    hiddenInputVar.name = hiddenInputVarName;
+    hiddenInputVar.value = brandName;
+
+    addNewContainer.append(addNewForm);
+    addNewForm.append(addNewInput);
+    addNewForm.append(hiddenInputFunction);
+    addNewForm.append(hiddenInputVar);
+    body.append(addNewContainer);
+    addNewInput.focus();
 }
 
 // Populate phone editor
