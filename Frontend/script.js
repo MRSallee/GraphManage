@@ -96,7 +96,7 @@ function addNew(type, brandName) {
         hiddenInputVar = document.createElement('input'),
         functionValue = type === 'brand' ? 'add-brand' : 'add-phone',
         hiddenInputVarName = type === 'brand' ? 'name' : 'brand',
-        name = type === 'brand' ? 'nBrand' : 'nPhone';
+        name = type === 'brand' ? 'brand' : 'name';
 
     addNewContainer.className = 'add-new-container';
     addNewForm.setAttribute('action', 'modify.php');
@@ -110,7 +110,7 @@ function addNew(type, brandName) {
 
     hiddenInputVar.setAttribute('type', 'hidden');
     hiddenInputVar.name = hiddenInputVarName;
-    hiddenInputVar.value = brandName;
+    hiddenInputVar.value = brandName ? brandName : "";
 
     addNewContainer.append(addNewForm);
     addNewForm.append(addNewInput);
