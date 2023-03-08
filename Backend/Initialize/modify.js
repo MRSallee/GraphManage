@@ -1,5 +1,5 @@
 const fs=require('fs'),
-	  {Input}=require('./variables.js');
+      {Input}=require('./variables.js');
 var json=JSON.parse(JSON.stringify(require('./phone_book.json')));
 fs.writeFile('backup.json',JSON.stringify(json,null,4),(err)=> { if(err) throw err; });
 
@@ -8,8 +8,8 @@ fs.writeFile('backup.json',JSON.stringify(json,null,4),(err)=> { if(err) throw e
 if(Input.func=="add-phone") addPhones();
 else if(Input.func=="add-brand") json.push({"name": Input.brand,"phones": []});
 // else if(Input.func=="add-file") addFile();
-// else if(Input.func=="del-phone") delPhones();
-// else if(Input.func=="del-brand") delBrand();
+else if(Input.func=="del-phone") delPhones();
+else if(Input.func=="del-brand") delBrand();
 // else if(Input.func=="del-file") delFile();
 
 fs.writeFile('phone_book.json',JSON.stringify(json,null,4),(err)=> { if(err) throw err; });
@@ -33,11 +33,12 @@ phoneNum=getPhoneNum(brandNum,Input.name);
 json[brandNum].phones[phoneNum].file.push(Input.fileName);
 json[brandNum].phones[phoneNum].suffix.push(Input.suffix);
 }
+*/
 
 function
 delPhones() {
 	var brandNum=getBrandNum(Input.brand),
-		phoneNum=getPhoneNum(brandNum,Input.name);
+	    phoneNum=getPhoneNum(brandNum,Input.name);
 
 	json[brandNum].phones.splice(phoneNum,phoneNum+1);
 }
@@ -49,11 +50,12 @@ delBrand() {
 	json.splice(brandNum,brandNum+1);
 }
 
+/*
 function
 delFile() {
 var brandNum=getBrandNum(Input.brand),
-phoneNum=getPhoneNum(brandNum,Input.name),
-fileNum,fileLength=0,i=0;
+    phoneNum=getPhoneNum(brandNum,Input.name),
+    fileNum,fileLength=0,i=0;
 
 for(i in json[brandNum].phones[phoneNum].file) {
 if(json[brandNum].phones[phoneNum].file.hasOwnProperty(i)) fileLength++;
