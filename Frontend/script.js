@@ -107,7 +107,8 @@ function addDeleteButton(brandName, phoneName, container) {
         delForm = document.createElement('form'),
         delInputBrand = document.createElement('input'),
         delInputModel = document.createElement('input'),
-        delInputFunction = document.createElement('input');
+        delInputFunction = document.createElement('input'),
+        delFunction = phoneName.length > 0 ? 'del-phone' : 'del-brand';
     
     delContainer.className = 'del-container';
     
@@ -125,7 +126,7 @@ function addDeleteButton(brandName, phoneName, container) {
     
     delInputFunction.setAttribute('type', 'hidden');
     delInputFunction.setAttribute('name', 'function');
-    delInputFunction.setAttribute('value', 'del-phones');
+    delInputFunction.setAttribute('value', delFunction);
     
     delContainer.append(delForm);
     delForm.append(delInputBrand);
