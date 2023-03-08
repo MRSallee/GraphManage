@@ -29,7 +29,9 @@ article.brand {
 }
 
 div.brand-label {
-    opacity: 0.3;
+    color: #ccc;
+    
+    padding: 0 12px 0 0;
 }
 
 div.brand-phones {
@@ -45,6 +47,46 @@ div.brand-phones article {
 
 article.expanded {
     background-color: #eee;
+}
+
+
+/*****
+Del button *****/
+
+div.brand-label,
+div.phone-label {
+    display: flex;
+}
+
+div.del-container {
+    flex: 24px 0 0;
+    height: 24px;
+    margin: 0 0 0 auto;
+    
+    color: #ccc;
+    
+    cursor: pointer;
+}
+
+div.del-container:hover {
+    background-color: #eee;
+    
+    color: #000;
+}
+
+div.del-container:before {
+    content: '+';
+    
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    
+    transform: rotate(45deg);
 }
 
 section.phones-buttons-container {

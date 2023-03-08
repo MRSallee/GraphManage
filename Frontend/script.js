@@ -56,19 +56,25 @@ function addBrand(item) {
 
     // Add phones from a brand
     brandPhones.forEach(function(phone) {
-        addModel(phone, brandPhonesList);
+        addModel(phone, brandName, brandPhonesList);
     });
     
     $(brandPhonesList).sortable();
+    
+    addDeleteButton(brandName, '', brandLabel);
 }
 
-function addModel(phone, brandPhonesList) {
+function addModel(phone, brandName, brandPhonesList) {
+    console.log(brandPhonesList);
+    
     let phoneContainer = document.createElement('article'),
         phoneLabel = document.createElement('div'),
         phoneVariations = document.createElement('div'),
         phoneFromJson = phone.name ? true : false,
         phoneName = phoneFromJson ? phone.name : phone,
         phoneSuffixes = phoneFromJson ? phone.suffx : 0;
+    
+    phoneLabel.className = 'phone-label';
     
     phoneLabel.textContent = phoneName;
     phoneContainer.append(phoneLabel);
@@ -84,6 +90,53 @@ function addModel(phone, brandPhonesList) {
     });
     
     if (phone === 'New') phoneContainer.click();
+    
+    addDeleteButton(brandName, phoneName, phoneLabel);
+}
+
+//<form action="modify.php" method="post">
+//  <input type="hidden" name="brand" value="(JS MAGIC)">
+//  <input type="hidden" name="name" value="(JS MAGIC)">
+//  <input type="hidden" name="brand" value="del-phones">
+//  <input type="hidden" name="function" value="del-phones">
+//</form>
+
+function addDeleteButton(brandName, phoneName, container) {
+    // Add delete button
+    let delContainer = document.createElement('div'),
+        delForm = document.createElement('form'),
+        delInputBrand = document.createElement('input'),
+        delInputModel = document.createElement('input'),
+        delInputFunction = document.createElement('input');
+    
+    delContainer.className = 'del-container';
+    
+    delForm.className = 'del-form';
+    delForm.setAttribute('action', 'modify.php');
+    delForm.setAttribute('method', 'post');
+    
+    delInputBrand.setAttribute('type', 'hidden');
+    delInputBrand.setAttribute('name', 'name');
+    delInputBrand.setAttribute('value', phoneName);
+    
+    delInputModel.setAttribute('type', 'hidden');
+    delInputModel.setAttribute('name', 'brand');
+    delInputModel.setAttribute('value', brandName);
+    
+    delInputFunction.setAttribute('type', 'hidden');
+    delInputFunction.setAttribute('name', 'function');
+    delInputFunction.setAttribute('value', 'del-phones');
+    
+    delContainer.append(delForm);
+    delForm.append(delInputBrand);
+    delForm.append(delInputModel);
+    delForm.append(delInputFunction);
+    
+    delContainer.addEventListener('click', function() {
+        delForm.submit();
+    });
+    
+    container.append(delContainer);
 }
 
 function addNew(type, brandName) {
@@ -202,7 +255,7 @@ function expandPhone(phone) {
 // Load json and init
 //let jsonUrl = 'https://squig.link/headphones/data/phone_book.json?' + new Date().getTime();
 //let jsonUrl = 'https://squig.link/data_mrs/phone_book.json?' + new Date().getTime();
-let jsonUrl = 'phone_book.json?' + new Date().getTime();
+let jsonUrl = '../phone_book.json?' + new Date().getTime();
 
 fetch(jsonUrl)
 .then(response => {

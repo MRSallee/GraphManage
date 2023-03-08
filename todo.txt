@@ -1,11 +1,14 @@
 Front end
 ----
-- Add deleting functionality for phones/brands 
 - Modify filenames/suffixes separately from editor; accomodate for array
+
+
 
 Back end
 ----
 - Allow users to upload measurment files
+
+
 
 Classes
 ----
