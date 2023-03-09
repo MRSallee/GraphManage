@@ -22,16 +22,17 @@ section.phones-container {
 }
 
 article.brand {
-    padding: 12px 0 6px 0;
-    margin: 24px 0;
+    padding: 18px 0 6px 0;
+    margin: 18px 0 0 0;
     
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #eaeaea;
 }
 
 div.brand-label {
-    color: #ccc;
+    font-weight: bold;
+    color: #000;
     
-    padding: 0 12px 0 0;
+    padding: 6px 12px 6px 0;
 }
 
 div.brand-phones {
@@ -46,7 +47,8 @@ div.brand-phones article {
 }
 
 article.expanded {
-    background-color: #eee;
+    background-color: #000;
+    color: #fff;
 }
 
 
@@ -93,9 +95,11 @@ section.phones-buttons-container {
     position: sticky;
     bottom: 0;
     
-    padding: 6px;
+    padding: 12px 0;
     
-    background-color: #eee;
+    background-color: rgba(255,255,255, 0.5);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid #ccc;
 }
 
 /*****
@@ -190,19 +194,40 @@ section.add-new-container {
 
 button.button-new-brand,
 button.button-new-phone {
-    height: 24px;
-    padding: 0 12px 0 8px;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    
+    height: 36px;
+    padding: 0 0 0 8px;
+    margin: 0 12px 0 auto;
     
     background-color: transparent;
-    border: 2px solid #ccc;
-    border-radius: 100px;
+    border: none;
     
-    color: #aaa;
+    color: #ccc;
     font-size: 12px;
-    line-height: 18px;
+    line-height: 24px;
     
     cursor: pointer;
+}
+
+button.button-new-brand:hover,
+button.button-new-phone:hover {
+    background-color: #eee;
+    
+    color: #000;
+}
+
+button.button-new-brand:after,
+button.button-new-phone:after {
+    content: '+';
+    
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    
+    font-size: 20px;
+    line-height: 24px;
 }
 
 button.button-new-phone {
@@ -214,7 +239,6 @@ input.add-new-label {
     
     background-color: #fff;
     border: 2px solid #79a6d2;
-    border-radius: 100px;
     
     color: #000;
     font-size: 16px;
