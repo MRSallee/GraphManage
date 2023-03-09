@@ -23,6 +23,10 @@ section.phones-container {
 
 article.brand {
     padding: 18px 0 6px 0;
+    
+}
+
+article.brand + article.brand {
     margin: 18px 0 0 0;
     
     border-top: 1px solid #eaeaea;
@@ -36,7 +40,7 @@ div.brand-label {
 }
 
 div.brand-phones {
-    border-left: 1px solid #ccc;
+    border-left: 1px solid #000;
     
     cursor: move;
     cursor: pointer;
@@ -47,7 +51,7 @@ div.brand-phones article {
 }
 
 article.expanded {
-    background-color: #000;
+    background-color: #7E4BEB;
     color: #fff;
 }
 
@@ -96,6 +100,7 @@ section.phones-buttons-container {
     bottom: 0;
     
     padding: 12px 0;
+    margin: 18px 0 0 0;
     
     background-color: rgba(255,255,255, 0.5);
     backdrop-filter: blur(6px);
@@ -108,7 +113,8 @@ Phone editor ****/
 main.phone-editor {
     flex: auto 1 1;
     
-    background-color: #eee;
+    background-color: #fafafa;
+    border-left: 1px solid #eee;
 }
 
 h2 {
@@ -116,6 +122,10 @@ h2 {
     
     padding: 12px 24px;
     margin: 0;
+    
+    color: #fff;
+    
+    background-color: #7E4BEB;
 }
 
 h2 span {
@@ -126,11 +136,11 @@ h2 input {
     padding: 12px 36px;
     margin-left: auto;
     
-    background-color: #79a6d2;
+    background-color: #FBEB65;
     border: none;
-    border-radius: 100px;
+    border-radius: 4px;
     
-    color: #fff;
+    color: #000;
     font-size: 16px;
     line-height: 1.5em;
     
@@ -149,6 +159,7 @@ div.values-variant {
 
 article.value-row {
     display: flex;
+    align-items: center;
 }
 
 article.value-row + article.value-row {
@@ -161,8 +172,13 @@ article.value-row div {
 
 article.value-row input {
     flex: auto 1 1;
+    padding: 9px;
     
     border: 1px solid #ccc;
+    border-radius: 4px;
+    
+    font-size: 16px;
+    line-height: 16px;
 }
 
 article.value-row input[readonly] {
@@ -172,6 +188,7 @@ article.value-row input[readonly] {
 
 article.value-row input[value=""] {
     background-color: #ddd;
+    border: 1px solid #EB4BD1;
 }
 
 /*****
@@ -235,12 +252,13 @@ button.button-new-phone {
 }
 
 input.add-new-label {
-    padding: 12px 36px;
+    padding: 9px;
     
     background-color: #fff;
-    border: 2px solid #79a6d2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     
     color: #000;
     font-size: 16px;
-    line-height: 1.5em;
+    line-height: 16px;
 }
