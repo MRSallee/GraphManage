@@ -1,13 +1,11 @@
 Front end
 ----
-- Modify filenames/suffixes separately from editor; accomodate for array
-
+- Create interface for uploading files
 
 
 Back end
 ----
-- Allow users to upload measurment files
-
+- Implement suffix modification
 
 
 Classes
