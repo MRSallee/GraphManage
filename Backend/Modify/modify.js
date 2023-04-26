@@ -55,8 +55,8 @@ delFile() {
 	    phoneNum=getPhoneNum(brandNum, Input.name),
 	    fileNum, fileLength=0, i=0;
 
-	for(i in json[brandNum].phones[phoneNum].suffix) {
-		if(json[brandNum].phones[phoneNum].suffix.hasOwnProperty(i)) fileLength++;
+	for(i in json[brandNum].phones[phoneNum].file) {
+		if(json[brandNum].phones[phoneNum].file.hasOwnProperty(i)) fileLength++;
 	}
 
 	for(i=0;i<fileLength;i++) {
@@ -65,7 +65,8 @@ delFile() {
 			break;
 		}
 	}
-	
+
+	fs.unlinkSync("files/"+json[brandNum].phones[phoneNum].file[fileNum]);
 	json[brandNum].phones[phoneNum].suffix.splice(fileNum, fileNum+1);
 	json[brandNum].phones[phoneNum].file.splice(fileNum, fileNum+1);
 }
