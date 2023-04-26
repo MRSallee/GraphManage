@@ -191,23 +191,61 @@ article.value-row input[value=""] {
     border: 1px solid #EB4BD1;
 }
 
-div.file-drop-target {
+/*****
+Uploader *****/=
+div.uploader-container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 24px 24px 24px;
+}
+
+form.uploader-form {
     display: flex;
+    flex-direction: column;
+    
+    padding:  0 24px 24px 24px;
+}
+
+label[for="input-file"] {
+    display: flex;
+    width: 100%;
+    margin: 0 0 24px 0;
+    
     justify-content: center;
     align-items: center;
-    margin: 0 24px 24px 24px;
     height: 150px;
     
     border: 1px dashed #ccc;
     border-radius: 4px;
+    
+    cursor: pointer;
 }
 
-div.file-drop-target:after {
-    content: 'drag and drop files here';
+label[for="input-file"]:after {
+    content: 'add file';
     
     color: #ccc;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 24px;
+}
+
+input#input-file {
+    display: none;
+}
+
+input.button-upload {
+    padding: 12px 36px;
+    margin: 12px 0 0 auto;
+    
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5em;
+    
+    cursor: pointer;    
 }
 
 /*****
@@ -241,7 +279,7 @@ button.button-new-phone {
     border: none;
     
     color: #ccc;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 24px;
     
     cursor: pointer;

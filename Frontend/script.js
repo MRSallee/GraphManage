@@ -254,48 +254,78 @@ function expandPhone(brandName, phone) {
         let phoneEditor = document.querySelector('main.phone-editor'),
             uploaderContainer = document.createElement('div'),
             uploaderForm = document.createElement('form'),
+            uploaderLabelFile = document.createElement('label'),
             uploaderInputFile = document.createElement('input'),
+            uploaderInputFilename = document.createElement('input'),
             uploaderInputBrand = document.createElement('input'),
             uploaderInputPhone = document.createElement('input'),
             uploaderInputSuffix = document.createElement('input'),
             uploaderInputHidden = document.createElement('input');
         
-            uploaderInputFile.setAttribute('type', 'file');
-            uploaderInputFile.setAttribute('name', 'file');
-            //uploaderInputFile.setAttribute('multiple', '');
-            uploaderInputFile.setAttribute('accept', '.txt');
-            uploaderInputFile.addEventListener('change', function() {
-                let file = uploaderInputFile.value,
-                    filename = String(file).split('\\').pop().split('.txt').shift(),
-                    regex = '(L|R|L\\d|R\\d|Target)$',
-                    isValid = filename.match(regex) ? 1 : 0;
-            });
+        uploaderLabelFile.setAttribute('for', 'input-file');
         
-            uploaderInputBrand.setAttribute('type', 'hidden');
-            uploaderInputBrand.setAttribute('name', 'brand');
-            uploaderInputBrand.setAttribute('value', brandName);
+        uploaderInputFile.setAttribute('type', 'file');
+        uploaderInputFile.setAttribute('name', 'file');
+        uploaderInputFile.setAttribute('accept', '.txt');
+        //uploaderInputFile.setAttribute('multiple', '');
+        uploaderInputFile.id = 'input-file';
+        uploaderInputFile.addEventListener('change', function() {
+            let file = uploaderInputFile.value,
+                regex = '(L|R|L\\d|R\\d|Target)$',
+                filename = String(file).split('\\').pop().split('.txt').shift(),
+                regexMatch = filename.match(regex),
+                isValid = regexMatch ? 1 : 0,
+                filenameTrimmed = filename.replace(regexMatch[0], '');
+
+            uploaderInputFilename.setAttribute('value', filenameTrimmed);
             
-            uploaderInputPhone.setAttribute('type', 'hidden');
-            uploaderInputPhone.setAttribute('name', 'name');
-            uploaderInputPhone.setAttribute('value', phone.name);
             
-            uploaderInputSuffix.setAttribute('type', 'text');
-            uploaderInputSuffix.setAttribute('name', 'suffix');
+            //createValRow(label, value, container, readOnly)
+            createValRow('Filename', filenameTrimmed, uploaderForm, true);
+            createValRow('Label', '', uploaderForm);
             
-            uploaderInputHidden.setAttribute('type', 'hidden');
-            uploaderInputHidden.setAttribute('name', 'function');
-            uploaderInputHidden.setAttribute('value', 'add-file');
+            let uploadButton = document.createElement('input');
+            
+            uploadButton.setAttribute('type', 'submit');
+            uploadButton.setAttribute('value', 'Upload');
+            uploadButton.className = 'button-upload';
+            
+            uploaderForm.append(uploadButton);
+        });
+
+        //uploaderInputFilename.setAttribute('type', 'hidden');
+        //uploaderInputFilename.setAttribute('name', 'filename');
+        //uploaderInputFilename.setAttribute('value', '');
+        //uploaderInputFilename.setAttribute('readonly', '');
+
+        uploaderInputBrand.setAttribute('type', 'hidden');
+        uploaderInputBrand.setAttribute('name', 'brand');
+        uploaderInputBrand.setAttribute('value', brandName);
+
+        uploaderInputPhone.setAttribute('type', 'hidden');
+        uploaderInputPhone.setAttribute('name', 'name');
+        uploaderInputPhone.setAttribute('value', phone.name);
+
+        //uploaderInputSuffix.setAttribute('type', 'hidden');
+        //uploaderInputSuffix.setAttribute('name', 'suffix');
+
+        uploaderInputHidden.setAttribute('type', 'hidden');
+        uploaderInputHidden.setAttribute('name', 'function');
+        uploaderInputHidden.setAttribute('value', 'add-file');
         
         uploaderForm.setAttribute('action', 'upload.php');
         uploaderForm.setAttribute('method', 'post');
         uploaderForm.setAttribute('enctype', 'multipart/form-data');
-        uploaderForm.append(uploaderInputFile);
+        uploaderForm.append(uploaderLabelFile);
+        uploaderLabelFile.append(uploaderInputFile);
+        //uploaderForm.append(uploaderInputFilename);
         uploaderForm.append(uploaderInputBrand);
         uploaderForm.append(uploaderInputPhone);
-        uploaderForm.append(uploaderInputSuffix);
+        //uploaderForm.append(uploaderInputSuffix);
         uploaderForm.append(uploaderInputHidden);
         
         uploaderContainer.className = 'uploader-container';
+        uploaderForm.className = 'uploader-form';
         uploaderContainer.append(uploaderForm);
         phoneEditor.append(uploaderContainer);
     }
