@@ -191,6 +191,25 @@ article.value-row input[value=""] {
     border: 1px solid #EB4BD1;
 }
 
+div.file-drop-target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 24px 24px 24px;
+    height: 150px;
+    
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}
+
+div.file-drop-target:after {
+    content: 'drag and drop files here';
+    
+    color: #ccc;
+    font-size: 12px;
+    line-height: 24px;
+}
+
 /*****
 Add new *****/
 section.add-new-container {

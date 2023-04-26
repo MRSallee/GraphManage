@@ -1,7 +1,6 @@
 // See LICENSE file for copyright and license details.
 // Load data and populate phone list
 function handleData(data) {
-    //console.log(data);
     let phoneList = document.querySelector('main.phone-list'),
         phonesContainer = document.createElement('section'),
         buttonsContainer = document.createElement('section'),
@@ -65,8 +64,6 @@ function addBrand(item) {
 }
 
 function addModel(phone, brandName, brandPhonesList) {
-    console.log(brandPhonesList);
-    
     let phoneContainer = document.createElement('article'),
         phoneLabel = document.createElement('div'),
         phoneVariations = document.createElement('div'),
@@ -81,7 +78,7 @@ function addModel(phone, brandName, brandPhonesList) {
     brandPhonesList.append(phoneContainer);
 
     phoneContainer.addEventListener('click', function() {
-        expandPhone(phone);
+        expandPhone(brandName, phone);
 
         let lastExpanded = document.querySelector('div.brand-phones article.expanded');
 
@@ -175,13 +172,16 @@ function addNew(type, brandName) {
 }
 
 // Populate phone editor
-function expandPhone(phone) {
+function expandPhone(brandName, phone) {
     // Clear current contents
-    let phoneEditor = document.querySelector('main.phone-editor form');
+    let phoneEditor = document.querySelector('main.phone-editor form'),
+        uploader = document.querySelector('div.uploader-container');
     
     function clearEditor() {
         let allInputs = phoneEditor.querySelectorAll('input');
         phoneEditor.innerHTML = '';
+        
+        if (uploader) uploader.remove();
     }
     clearEditor();
     
@@ -250,7 +250,56 @@ function expandPhone(phone) {
         createValRow('Label', '', valsVariant);
     }
     
+    function createUploader(brandName) {
+        let phoneEditor = document.querySelector('main.phone-editor'),
+            uploaderContainer = document.createElement('div'),
+            uploaderForm = document.createElement('form'),
+            uploaderInputFile = document.createElement('input'),
+            uploaderInputBrand = document.createElement('input'),
+            uploaderInputPhone = document.createElement('input'),
+            uploaderInputSuffix = document.createElement('input'),
+            uploaderInputHidden = document.createElement('input');
         
+            uploaderInputFile.setAttribute('type', 'file');
+            uploaderInputFile.setAttribute('name', 'file');
+            //uploaderInputFile.setAttribute('multiple', '');
+            uploaderInputFile.setAttribute('accept', '.txt');
+            uploaderInputFile.addEventListener('change', function() {
+                let file = uploaderInputFile.value,
+                    filename = String(file).split('\\').pop().split('.txt').shift(),
+                    regex = '(L|R|L\\d|R\\d|Target)$',
+                    isValid = filename.match(regex) ? 1 : 0;
+            });
+        
+            uploaderInputBrand.setAttribute('type', 'hidden');
+            uploaderInputBrand.setAttribute('name', 'brand');
+            uploaderInputBrand.setAttribute('value', brandName);
+            
+            uploaderInputPhone.setAttribute('type', 'hidden');
+            uploaderInputPhone.setAttribute('name', 'name');
+            uploaderInputPhone.setAttribute('value', phone.name);
+            
+            uploaderInputSuffix.setAttribute('type', 'text');
+            uploaderInputSuffix.setAttribute('name', 'suffix');
+            
+            uploaderInputHidden.setAttribute('type', 'hidden');
+            uploaderInputHidden.setAttribute('name', 'function');
+            uploaderInputHidden.setAttribute('value', 'add-file');
+        
+        uploaderForm.setAttribute('action', 'upload.php');
+        uploaderForm.setAttribute('method', 'post');
+        uploaderForm.setAttribute('enctype', 'multipart/form-data');
+        uploaderForm.append(uploaderInputFile);
+        uploaderForm.append(uploaderInputBrand);
+        uploaderForm.append(uploaderInputPhone);
+        uploaderForm.append(uploaderInputSuffix);
+        uploaderForm.append(uploaderInputHidden);
+        
+        uploaderContainer.className = 'uploader-container';
+        uploaderContainer.append(uploaderForm);
+        phoneEditor.append(uploaderContainer);
+    }
+    createUploader(brandName);
 }
 
 // Load json and init

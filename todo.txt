@@ -1,6 +1,32 @@
 Front end
 ----
-- Create interface for uploading files
+And for when you make a frontend for file uploading, my php script looks for 
+<!-- Adding files -->
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input type="text" name="brand">
+  <input type="text" name="name">
+  <input type="text" name="suffix">
+  <input type="hidden" name="function" value="add-file">
+</form>
+
+<!-- Deleting files -->
+<form action="upload.php" method="post">
+  <input type="hidden" name="brand">
+  <input type="hidden" name="name">
+  <input type="hidden" name="suffix">
+  <input type="hidden" name="del-file">
+</form>
+
+rn it uses the suffix name for deleting both the suffix and file from the json
+
+Although I just remembered I need to update my script so it deletes the actual file as well
+As long as the file is being sent through a post request it should be fine with no modification on my part
+One important thing to keep in mind, when sending files with form you need to have
+enctype="multipart/form-data"
+k
+in the form attributes
+It won't work otherwise
 
 
 Back end
