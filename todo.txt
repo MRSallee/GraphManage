@@ -1,5 +1,11 @@
+Overall
+---
+Modify JSON clientside (JS)
+
 Front end
 ----
+- Implement brand/phones/suffix/filename functions
+
 And for when you make a frontend for file uploading, my php script looks for 
 <!-- Adding files -->
 <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -31,14 +37,5 @@ It won't work otherwise
 
 Back end
 ----
-- Implement suffix modification
-
-
-Classes
-----
-- Integrated Math 2
-- American Government
-- AP Computer Science A CTE
-- Psychology
-- CSU Expository Reading/Writing (English)
-- Japanese 2
+- Reimplement JSON editing
+- Reimplement file uploading
