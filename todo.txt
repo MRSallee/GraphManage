@@ -37,5 +37,4 @@ It won't work otherwise
 
 Back end
 ----
-- Reimplement JSON editing
 - Reimplement file uploading
