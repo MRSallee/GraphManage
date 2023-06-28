@@ -1,5 +1,6 @@
 // See LICENSE file for copyright and license details.
 // Load data and populate phone list
+
 function handleData(data) {
     let phoneList = document.querySelector('main.phone-list'),
         phonesContainer = document.createElement('section'),
@@ -25,6 +26,26 @@ function handleData(data) {
     
     $(phonesContainer).sortable();
 }
+
+function submitSave(e, foo) {
+    e.preventDefault();
+    console.log(foo);
+};
+
+function submitAddNew(e, foo) {
+    e.preventDefault();
+    console.log(foo);
+};
+
+function submitAddPhone(e, foo) {
+    e.preventDefault();
+    console.log(foo);
+};
+
+function submitUpload(e, foo) {
+    e.preventDefault();
+    console.log(foo);
+};
 
 function addBrand(item) {
     let phonesContainer = document.querySelector('section.phones-container'),
@@ -154,6 +175,9 @@ function addNew(type, brandName) {
     addNewForm.setAttribute('method', 'post');
     addNewInput.className = 'add-new-label';
     addNewInput.name = name;
+    addNewForm.addEventListener('submit', function(e) {
+        submitAddNew(e, functionValue);
+    });
 
     hiddenInputFunction.setAttribute('type', 'hidden');
     hiddenInputFunction.name = 'function';
@@ -193,6 +217,9 @@ function expandPhone(brandName, phone) {
     phoneHeadingLabel.textContent = phone.name;
     phoneSubmit.setAttribute('type', 'submit');
     phoneSubmit.setAttribute('value', 'Save');
+    phoneSubmit.addEventListener('click', function(e) {
+        submitSave(e, 'Save!');
+    });
     
     phoneHeading.append(phoneHeadingLabel);
     phoneHeading.append(phoneSubmit);
@@ -289,6 +316,9 @@ function expandPhone(brandName, phone) {
             uploadButton.setAttribute('type', 'submit');
             uploadButton.setAttribute('value', 'Upload');
             uploadButton.className = 'button-upload';
+            uploadButton.addEventListener('click', function(e) {
+                submitUpload(e, 'Upload!');
+            });
             
             uploaderForm.append(uploadButton);
         });
